@@ -1,0 +1,22 @@
+LOGICIEL DE FACTURATION YVAN
+
+Fichiers :
+- facturation.py : programme de facturation.
+- build_windows.bat : compilation automatique en .exe sur Windows.
+
+Pour obtenir le .exe :
+1. Décompresse ce dossier sur un PC Windows.
+2. Installe Python 3 depuis python.org en cochant "Add Python to PATH".
+3. Double-clique sur build_windows.bat et attends la fin.
+4. Le fichier dist\FacturationYvan.exe sera créé.
+
+Fonctions initiales :
+- Client, RC, NIF, téléphone et adresse
+- Numéro et date de facture
+- Articles, description, quantité, prix unitaire, calcul automatique
+- TVA modifiable, totaux HT et TTC
+- Enregistrement local et historique
+- Export PDF si les dépendances sont installées
+
+Les données sont stockées dans %APPDATA%\FacturationYvan\facturation.db.
+Ce prototype est une première version : vérifie les paramètres de TVA et les mentions légales applicables à ton activité avant usage commercial.
