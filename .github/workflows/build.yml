@@ -1,0 +1,25 @@
+
+name: Construire Facturation Yvan
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Recuperer le code
+        uses: actions/checkout@v4
+      - name: Installer Python de compilation
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Installer les dependances
+        run: python -m pip install pyinstaller reportlab
+      - name: Compiler le logiciel Windows
+        run: pyinstaller --noconfirm --clean --onefile --windowed --name FacturationYvan facturation.py
+      - name: Publier le fichier EXE
+        uses: actions/upload-artifact@v4
+        with:
+          name: FacturationYvan-Windows10
+          path: dist/FacturationYvan.exe
